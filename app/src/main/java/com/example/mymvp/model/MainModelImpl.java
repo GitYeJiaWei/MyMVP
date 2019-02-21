@@ -26,10 +26,10 @@ public class MainModelImpl implements MainContract.MainModel{
     }
 
     @Override
-    public Observable<BaseBean<LoginBean>> loadMainData() {
+    public Observable<BaseBean<LoginBean>> loadMainData(String userName,String password) {
         Map<String,String> params = new HashMap<>();
-        params.put("userName","admin");
-        params.put("password","123");
+        params.put("userName",userName);
+        params.put("password",password);
         return mApi.login(params);
     }
 }

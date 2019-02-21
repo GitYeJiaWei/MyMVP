@@ -4,7 +4,6 @@ import android.util.Log;
 
 import com.example.mymvp.bean.BaseBean;
 import com.example.mymvp.bean.LoginBean;
-import com.example.mymvp.bean.StoresBean;
 import com.example.mymvp.contract.MainContract;
 import com.example.mymvp.model.MainModelImpl;
 
@@ -28,8 +27,8 @@ public class MainPresenterImpl implements MainContract.MainPresenter{
     }
 
     @Override
-    public void getMainData() {
-        mMainModel.loadMainData()
+    public void getMainData(String userName,String password) {
+        mMainModel.loadMainData(userName,password)
                 .observeOn(AndroidSchedulers.mainThread())//拿到数据的时候在主线程
                 .subscribeOn(Schedulers.io())//访问数据在工作线程
                 .subscribe(new Subscriber<BaseBean<LoginBean>>() {

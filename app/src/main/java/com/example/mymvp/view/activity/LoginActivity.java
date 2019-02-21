@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity implements MainContract.Mai
 
     public void getData(View view) {
         //使用presenter操作M与V的交互
-        mPresenter.getMainData();
+        mPresenter.getMainData("admin","123");
     }
 
     @Override

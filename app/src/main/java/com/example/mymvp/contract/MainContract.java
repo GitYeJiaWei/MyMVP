@@ -19,11 +19,11 @@ public interface MainContract {
 
    //Presenter的接口
     interface MainPresenter{
-       void getMainData();
+       void getMainData(String userName,String password);
    }
 
    //Model的接口
     interface MainModel{
-       Observable loadMainData();
+       Observable loadMainData(String userName,String password);
    }
 }
